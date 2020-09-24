@@ -1,0 +1,141 @@
+/** Reset basico de css para remover diferenças entre navegadores
+* http://meyerweb.com/eric/tools/css/reset/ 
+*   v2.0 | 20110126
+*  License: none (public domain)
+**/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: 'Roboto', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/** Flexbox para compatibilidade com browsers modernos 
+* Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mixins
+**/
+.d-flexbox {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+html {
+	height: 100%;
+    overflow: auto;
+}
+
+body {
+	background: transparent url(background.jpg) top center no-repeat;
+    height: 100%;
+    overflow: auto;
+    background-size: cover;
+	font-size: 16px;
+}
+
+nav.navbar { 
+	width: 100%;
+	height: 64px;
+	display: block;
+	position: relative;
+}
+nav.navbar ul.d-flexbox {
+	flex-direction: columns;
+	justify-content: center;
+}
+nav ul li { padding: 20px 5px; min-width: 150px; background-color: #ddd; text-align: center; }
+nav ul li a {  color: #000;  text-decoration: none; line-height: 1.5;}
+nav ul li a:hover {  color: #000;  text-decoration: underline;}
+nav ul li a.menu-me { font-size: 1.5rem; line-height: 1; }
+
+.conteudo {
+    height: calc(100% - 64px);
+	align-items: center;
+	justify-content: center;
+}
+
+.conteudo .introducao.d-flexbox {
+    flex-direction: column;
+    justify-content: center;
+	color: #FFF;
+    max-height: 300px;
+}
+
+.conteudo .introducao {
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 20px;
+}
+
+.conteudo .introducao h1 {
+	font-size: 2rem;
+	color: #f9d629;
+}
+.conteudo .introducao h2 {
+	font-size: 1.5rem;
+}
+
+.conteudo .introducao a {
+	background-color: #f9d629;
+	color: #000;
+	font-weight: 700;
+	border-radius: 30px;
+	width: auto;
+	max-width: 160px;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+}
+.conteudo .introducao a:hover { text-decoration: none; }
